@@ -20,6 +20,7 @@
 --               HEX1   -> Display segundos decenas
 --               HEX2   -> Display minutos unidades
 --               HEX3   -> Display constante (siempre 0)
+-- Comentarios dados por Gemini Pro 3.1
 -- =============================================================
 
 LIBRARY IEEE;
