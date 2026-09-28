@@ -32,6 +32,7 @@ ENTITY temporizador IS
         HEX0   : OUT std_logic_vector(6 DOWNTO 0);  -- Seg. unidades seg.
         HEX1   : OUT std_logic_vector(6 DOWNTO 0);  -- Seg. decenas  seg.
         HEX2   : OUT std_logic_vector(6 DOWNTO 0);  -- Minutos
+        HEX2_dp : OUT std_logic;
         HEX3   : OUT std_logic_vector(6 DOWNTO 0)   -- Constante 0
     );
 END temporizador;
@@ -142,7 +143,7 @@ BEGIN
     -- Invertir boton: en la DE0 el pulsador es activo en bajo
     -- presionado='0' -> btn_i='1' (activo alto para ctrl_boton)
     btn_i <= NOT btn;
-
+    HEX2_dp <= '0' ;
     -- Calculo del verdadero fin de conteo: 9:59
     -- Las tres condiciones deben cumplirse simultaneamente:
     --   bcd_mu = "1001"  ->  minutos unidades = 9
