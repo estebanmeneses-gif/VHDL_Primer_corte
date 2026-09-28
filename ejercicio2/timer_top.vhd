@@ -24,6 +24,7 @@ ENTITY timer_top IS
         start     : IN  std_logic;
         stop      : IN  std_logic;
         ssd_min   : OUT std_logic_vector(6 DOWNTO 0);
+        ssd_min_dp : OUT std_logi;
         ssd_seg_d : OUT std_logic_vector(6 DOWNTO 0);
         ssd_seg_u : OUT std_logic_vector(6 DOWNTO 0)
     );
@@ -111,7 +112,7 @@ BEGIN
     -- ==========================================================
     -- LOGICA COMBINACIONAL
     -- ==========================================================
-
+    ssd_min_dp <= '0';
     max_reached <= '1' WHEN (bcd_min = "1001" AND
                               bcd_seg_d_3b = "101" AND
                               bcd_seg_u = "1001")
